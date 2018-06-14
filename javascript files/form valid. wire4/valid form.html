@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+   function validate(){
+       var result=true;
+       var e=document.getElementsByName("Email")[0].value;
+       var atindex=e.indexOf('@');
+       var dotindex=e.lastIndexOf('.'); 
+       var a=document.getElementById("user").value;
+       var m=document.getElementById("number").value;
+        var radio1=document.getElementById("male").checked;
+       var radio2=document.getElementById("female").checked;
+       var check1=document.getElementById("web design").checked;
+       var check2=document.getElementById("java").checked;
+       
+       if(a.length==""){
+           alert("**fill name");
+           result=false;
+         return(result);}
+           
+       if((a.length<=2)||( a.length>20)){
+           alert("**invalid name");
+           result=false;
+           return(result);}
+       
+       if(!isNaN(a))
+       { alert("**invalid name");
+           result=false;
+           return(result);    
+       }
+       
+       
+       if(e.length==""){
+           alert("**fill email");
+           result=false;
+         return(result);
+           
+       }
+       if(atindex<1|| dotindex>=e.length-2|| dotindex-atindex<3)
+           { alert("**invalid email")
+               result=false;
+           return(result);}
+       
+       
+       
+       
+       if(m.length==""){
+           alert("**fill number");
+           result=false;
+         return(result);}
+       
+            if((m.length<10)||( m.length>10)){
+           alert("**invalid number");
+           result=false;
+           return(result);}
+       
+       if((radio1=="")&&(radio2==""))
+           {
+               alert("select either male or female");
+               result=false;
+               return(result);
+           }
+       
+        if((check1=="")&&(check2==""))
+           {
+               alert("select atleast one course");
+               result=false;
+               return(result);
+           }
+       
+    
+       
+    
+   }
+</script>
+    </head>    
+    
+<body>   
+<form  action="somefile.html" method="post" onsubmit="return validate()" >
+    
+    <table>
+    <tr>
+    <td>Name</td>
+        <td><input type="text"  id="user" name="user"/></td>
+    </tr>
+        <tr>
+      <td>Email</td>
+        <td><input type="Email" name="Email" /></td>
+    </tr>
+        <td>Phone no</td> 
+        <td><input id="number" type="number" name="number"/></td>
+     <tr>
+    <td>Gender</td>
+        <td><input type="radio" id="male" name="gender"/>M
+         <input type="radio" id="female" name="gender"/>F</td>
+    </tr>
+     <tr>
+    <td>Course</td>
+        <td><input type="Checkbox" id="web design" name="web design"/>web design</td>
+         <td><input type="Checkbox" id="java" name="java"/>java</td>
+    </tr>
+    <tr><td>city</td><td><select><option>Bhopal</option>
+        <option>Delhi</option></select></td></tr><tr>
+    <td><input type="submit" value="Register"/>
+             
+   <input type="reset"/>
+
+    </td>
+    
+    </table>
+    </form>
+    </body>
+</html>
+    
+    
